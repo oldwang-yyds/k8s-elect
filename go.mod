@@ -1,9 +1,9 @@
 module k8s-elect
 
-go 1.16
+go 1.15
 
 require (
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.3.0 // indirect
 	k8s.io/apimachinery v0.22.0
 	k8s.io/client-go v0.22.0
 	k8s.io/klog/v2 v2.10.0

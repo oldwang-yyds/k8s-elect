@@ -79,7 +79,6 @@ func main() {
 	run := func(ctx context.Context) {
 		// complete your controller loop here
 		klog.Info("I am leader,ip: ", id)
-
 	}
 
 	// use a Go context so we can tell the leaderelection code when we
