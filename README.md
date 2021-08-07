@@ -62,8 +62,11 @@ spec:
       - configMap:
           name: kubeconfig
         name: kubeconfig
+```
 
----
+
+挂载的 kubeconfig，保存为 configmap.yaml
+```yaml
 apiVersion: v1
 data:
   kubeconfig: |
@@ -101,11 +104,11 @@ data:
         client-key: /Users/wangxiong/.minikube/profiles/minikube/client.key
 kind: ConfigMap
 metadata:
-  name: kubeconfigs
+  name: kubeconfig
 ```
 
 ```
-k apply -f deployment.yaml
+k apply -f deployment.yaml configmap.yaml
 ```
 
 #### 查看pod日志
