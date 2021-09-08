@@ -9,8 +9,8 @@ git clone git@github.com:friendly-u/k8s-elect.git
 ```
 GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOFLAGS=-mod=vendor go build -o elect main.go
 
-docker build -t hub.ucloudadmin.com/leesin/elect:test .
-docker push hub.ucloudadmin.com/leesin/elect:test
+docker build -t docker.io/xxx/elect:test .
+docker push docker.io/xxx/elect:test
 ```
 
 #### 部署服务
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: elect
-        image: hub.ucloudadmin.com/leesin/elect:test
+        image: docker.io/xxx/elect:test
         imagePullPolicy: IfNotPresent
         resources:
           requests:
@@ -46,7 +46,7 @@ spec:
         args:
           - -lease-lock-name=elect-test
           - -lease-lock-namespace=default
-          - -kubeconfig=/app/configs/kubeconfig-x1
+          - -kubeconfig=/app/configs/kubeconfig
         ports:
         - containerPort: 8000
           name: http
@@ -73,35 +73,11 @@ data:
     apiVersion: v1
     clusters:
     - cluster:
-        certificate-authority: /Users/wangxiong/.minikube/ca.crt
-        extensions:
-        - extension:
-            last-update: Mon, 02 Aug 2021 10:12:10 CST
-            provider: minikube.sigs.k8s.io
-            version: v1.22.0-beta.0
-          name: cluster_info
-        server: https://127.0.0.1:58512
-      name: minikube
-    contexts:
-    - context:
-        cluster: minikube
-        extensions:
-        - extension:
-            last-update: Mon, 02 Aug 2021 10:12:10 CST
-            provider: minikube.sigs.k8s.io
-            version: v1.22.0-beta.0
-        name: context_info
-        namespace: default
-        user: minikube
-    name: minikube
-    current-context: minikube
-    kind: Config
-    preferences: {}
-    users:
-    - name: minikube
-    user:
-        client-certificate: /Users/wangxiong/.minikube/profiles/minikube/client.crt
-        client-key: /Users/wangxiong/.minikube/profiles/minikube/client.key
+   xxxxx
+   xxxx
+   xxx
+   xx
+   x
 kind: ConfigMap
 metadata:
   name: kubeconfig
